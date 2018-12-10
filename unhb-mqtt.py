@@ -54,7 +54,7 @@ space_obj = json.loads(space_json)
 
 # Matrix-Bot definitions
 matrix_bot_user = "DaneelOlivaw"  # Bot's username
-matrix_bot_passwd = "StefanTest123"  # Bot's password
+matrix_bot_passwd = "xxxxxxxx"  # Bot's password
 matrix_server = "https://matrix.un-hack-bar.de"
 matrix_roomid = "!qxbQFatOwXtPBXegqg:matrix.un-hack-bar.de"
 matrix_open_json = {"url": "mxc://matrix.un-hack-bar.de/AwzcZPKZlaFCiDjJGrbmhVqy"}
