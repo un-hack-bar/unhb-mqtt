@@ -1,2 +1,1 @@
-mkdir qrcodes
 pip install -r requirements.txt
