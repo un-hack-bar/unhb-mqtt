@@ -2,26 +2,26 @@
 import paho.mqtt.client as mqtt
 import json
 import time
-import sys
 import pyqrcode
 from PIL import Image, ImageDraw, ImageFont
 import cups
 from matrix_client.client import MatrixClient
 
+#Druckerinitialisierung
 conn = cups.Connection()
 printers = conn.getPrinters()
 
-
+#formatiert uns hex in der notation 0x0000
 def padhexa(s):
     return '0x' + s[2:].zfill(4)
 
 
 def create_qrcode(newcode,hexid):
     qrobj = pyqrcode.create(newcode)
-    with open('test.png', 'wb') as f:
+    with open('qr.png', 'wb') as f:
         qrobj.png(f, scale=10)
     bg = Image.open('bg.png')
-    img = Image.open('test.png')
+    img = Image.open('qr.png')
     width, height = img.size
     logo_size = 140
     logo = Image.open('unhb.png')
@@ -36,7 +36,8 @@ def create_qrcode(newcode,hexid):
     outimage = "./qrcodes/" + hexid + ".png"
     bg.save(outimage)
     print("qrcode erfolgreich generiert: " +newcode)
- #   conn.printFile("gk420d", outimage, "foo", {})
+    # druckername hardcoded!
+    conn.printFile("gk420d", outimage, "Labelausdruck", {})
 
 
 def get_lastkey():
