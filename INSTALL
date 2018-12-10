@@ -1,3 +1,4 @@
+mkdir qrcodes
 pip install paho-mqtt
 pip install pyqrcode
 pip install pillow
