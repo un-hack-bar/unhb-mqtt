@@ -7,16 +7,17 @@ from PIL import Image, ImageDraw, ImageFont
 import cups
 from matrix_client.client import MatrixClient
 
-#Druckerinitialisierung
+# Druckerinitialisierung
 conn = cups.Connection()
 printers = conn.getPrinters()
 
-#formatiert uns hex in der notation 0x0000
+
+# formatiert uns hex in der notation 0x0000
 def padhexa(s):
     return '0x' + s[2:].zfill(4)
 
 
-def create_qrcode(newcode,hexid):
+def create_qrcode(newcode, hexid):
     qrobj = pyqrcode.create(newcode)
     with open('qr.png', 'wb') as f:
         qrobj.png(f, scale=10)
@@ -35,7 +36,7 @@ def create_qrcode(newcode,hexid):
     bg.paste(img, (205, 0, 615, 410))
     outimage = "./qrcodes/" + hexid + ".png"
     bg.save(outimage)
-    print("qrcode erfolgreich generiert: " +newcode)
+    print("qrcode erfolgreich generiert: " + newcode)
     # druckername hardcoded!
     conn.printFile("gk420d", outimage, "Labelausdruck", {})
 
