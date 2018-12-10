@@ -1,0 +1,6 @@
+paho-mqtt
+pyqrcode
+pillow
+matrix-client
+pycups
+pypng

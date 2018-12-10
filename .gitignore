@@ -1,0 +1,12 @@
+# Python byte-compiled, optimized and DLL files
+__pycache__/
+*.py[cod]
+
+# Some common Python environments
+.env
+.venv
+env/
+venv/
+
+# Generated qrcodes
+qrcodes/
