@@ -1,0 +1,6 @@
+pip install paho-mqtt
+pip install pyqrcode
+pip install pillow
+pip install matrix-client
+pip install pycups
+pip install pypng
