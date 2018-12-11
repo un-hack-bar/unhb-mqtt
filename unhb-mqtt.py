@@ -85,7 +85,7 @@ def spaceapi():
 def on_message(client, userdata, msg):
     #    print(msg.topic+" "+str(msg.payload))
     print("Received message '" + str(msg.payload) + "' on topic '" + msg.topic + "' with QoS " + str(msg.qos))
-    if msg.topic == '/UHB/public/status':
+    if msg.topic == '/UHB/status/public':
         if msg.payload == "0":
             #            space_obj["state"] = {u'open': True,u'lastchange': time.time()}
             space_obj["state"]["open"] = True
